@@ -1,0 +1,15 @@
+<a (click)="gotoDetails(contact.id || 0)">
+  <div class="contact-container mat-elevation-z2" matRipple>
+    <mat-card>
+      <mat-card-content>
+        <div class="contact-details-container">
+          <div mat-card-avatar class="contact-avatar">{{contact.firstName[0]}}</div>
+          <div style="flex:1">
+            <h3>{{contact.firstName}} {{contact.lastName}}</h3>
+            <p>{{contact.phone}}</p>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</a>

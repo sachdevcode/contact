@@ -1,0 +1,14 @@
+<div class="contact-list-container">
+
+  <div class="search-contact-field-container">
+    <mat-form-field class="search-contact-field" appearance="outline">
+      <mat-label>Search Contact</mat-label>
+      <input [(ngModel)]="searchString"  matInput placeholder="Search...">
+      <mat-icon matSuffix>search</mat-icon>
+    </mat-form-field>
+  </div>
+
+  <div class="scroll-contact-list">
+    <app-contact *ngFor="let contact of contacts | filterPipe:searchString" [contact]="contact"></app-contact>
+  </div>
+</div>

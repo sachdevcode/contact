@@ -1,0 +1,13 @@
+.form-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.form-comtaier-card {
+  min-width: 600px;
+}
+.form-row {
+  display: flex;
+  gap: 1rem;
+}

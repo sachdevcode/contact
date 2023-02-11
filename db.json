@@ -1,0 +1,28 @@
+{
+  "contacts": [
+    {
+      "id": 1,
+      "firstName": "Peter",
+      "lastName": "Parker",
+      "phone": "+16102458445",
+      "company": "ABC Company",
+      "email": "abc@gmail.com"
+    },
+    {
+      "id": 2,
+      "firstName": "Henry",
+      "lastName": "Cavil",
+      "phone": "+16102458445",
+      "company": "ABC Company",
+      "email": "abc@gmail.com"
+    },
+    {
+      "id": 3,
+      "firstName": "David",
+      "lastName": "Will",
+      "phone": "+16102458445",
+      "company": "XYZ Company",
+      "email": "abc@gmail.com"
+    }
+  ]
+}

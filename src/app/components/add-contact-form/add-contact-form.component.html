@@ -1,0 +1,41 @@
+<div class="form-container">
+  <mat-card class="form-comtaier-card">
+    <mat-card-content>
+      <mat-card-title>Add Contact</mat-card-title>
+      <form [formGroup]="addContactForm" (ngSubmit)="onSubmit()">
+        <div class="form-row">
+            <mat-form-field class="full-width" appearance="fill">
+              <mat-label>First Name</mat-label>
+              <input type="text" formControlName="firstName"  matInput>
+            </mat-form-field>
+
+            <mat-form-field class="full-width" appearance="fill">
+              <mat-label>Last Name</mat-label>
+              <input type="text" formControlName="lastName" matInput>
+            </mat-form-field>
+        </div>
+
+        <div class="form-row">
+          <mat-form-field class="full-width" appearance="fill">
+            <mat-label>Phone</mat-label>
+            <input type="text" formControlName="phone" matInput>
+          </mat-form-field>
+
+          <mat-form-field class="full-width" appearance="fill">
+            <mat-label>Company</mat-label>
+            <input type="text" formControlName="company" matInput>
+          </mat-form-field>
+      </div>
+      <div class="form-row">
+        <mat-form-field  class="full-width" appearance="fill">
+          <mat-label>Email</mat-label>
+          <input type="email" formControlName="email" matInput>
+        </mat-form-field>
+      </div>
+      <div style="text-align:right;">
+        <button mat-stroked-button color="primary" type="submit">Add to contacts</button>
+      </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

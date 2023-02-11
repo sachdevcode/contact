@@ -1,0 +1,13 @@
+<mat-card class="side-nav">
+  <mat-card-content>
+      <div *ngFor="let route of routes">
+        <button
+        mat-button
+        color="primary"
+        mat-flat-button
+        routerLink={{route.path}}
+        class="nav-btn"
+        >{{route.title}}</button>
+      </div>
+  </mat-card-content>
+</mat-card>
