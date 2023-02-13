@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { AuthService } from 'src/app/service/auth.service';
 interface Route {
   title: string,
   path:string,
@@ -22,9 +23,12 @@ export class SideNavComponent implements OnInit {
       path:'/add-contact',
     },
   ]
-  constructor(private route:ActivatedRoute) { }
-
+  constructor(private auth:AuthService) { }
+  isLoggedin: Boolean = !!localStorage.getItem('user');
   ngOnInit(): void {
   }
-
+  onLogout() {
+    this.auth.logout()
+    this.isLoggedin = false
+  }
 }

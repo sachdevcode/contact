@@ -1,11 +1,10 @@
-
-  .contact-detail-container {
+.contact-detail-container {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     height: calc(100vh - 2rem);
-  }
+}
 .contact-details {
   width: 400px;
 }

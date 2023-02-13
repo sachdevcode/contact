@@ -20,6 +20,9 @@ export class ContactServiceService {
   addContact(contact:CONTACT):Observable<CONTACT>{
     return this.http.post<CONTACT>(this.baseURL, contact)
   }
+  updateContact(id:string|number, contact:CONTACT):Observable<CONTACT>{
+    return this.http.put<CONTACT>(`${this.baseURL}/${id}`, contact)
+  }
 
   getContactDetails(id: number | string):Observable<CONTACT>{
     return this.http.get<CONTACT>(`${this.baseURL}/${id}`).pipe()

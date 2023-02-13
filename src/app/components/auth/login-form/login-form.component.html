@@ -1,0 +1,29 @@
+<mat-card class="login-form-container">
+  <mat-card-content>
+      <h1>{{ loginPage ? 'Login': 'Sign up'}}</h1>
+    <mat-card-content>
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <mat-form-field class="full-width" appearance="fill">
+          <mat-label>Email</mat-label>
+          <input type="email" matInput formControlName="email">
+        </mat-form-field>
+
+        <mat-form-field class="full-width" appearance="fill">
+          <mat-label>Password</mat-label>
+          <input minlength="6" type="password" formControlName="password" matInput>
+        </mat-form-field>
+        <div>
+          <button class="full-width" mat-raised-button color="primary">{{loginPage ? "Login":"Signup"}}</button>
+        </div>
+      </form>
+    </mat-card-content>
+    <div style="margin-left:1rem;">
+      <mat-card-footer *ngIf="loginPage">
+        <p>Not have an account ? <a routerLink="/signup">Sign up</a></p>
+      </mat-card-footer>
+      <mat-card-footer *ngIf="!loginPage">
+        <p>Already have an account ? <a routerLink="/login">Login</a></p>
+      </mat-card-footer>
+    </div>
+  </mat-card-content>
+</mat-card>

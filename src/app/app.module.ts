@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
+import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { AppComponent } from './app.component';
 import { MainComponent } from './pages/main/main.component';
 import {MatButtonModule} from '@angular/material/button';
@@ -20,6 +22,12 @@ import { ContactDetailsComponent } from './pages/contact-details/contact-details
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FilterPipePipe } from './pipes/filter-pipe.pipe';
+import { environment } from 'src/environments/environment';
+import { LoginFormComponent } from './components/auth/login-form/login-form.component';
+import { LoginComponent } from './pages/login/login.component';
+import { FIREBASE_OPTIONS } from '@angular/fire/compat';
+import { SignupComponent } from './pages/signup/signup.component';
+import { ContactInfoComponent } from './components/contact-info/contact-info.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +40,10 @@ import { FilterPipePipe } from './pipes/filter-pipe.pipe';
     AddContactComponent,
     ContactDetailsComponent,
     FilterPipePipe,
+    LoginFormComponent,
+    LoginComponent,
+    SignupComponent,
+    ContactInfoComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,9 +56,11 @@ import { FilterPipePipe } from './pipes/filter-pipe.pipe';
     MatIconModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
+    provideFirestore(() => getFirestore())
   ],
-  providers: [],
+  providers: [{ provide: FIREBASE_OPTIONS, useValue: environment.firebaseConfig }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

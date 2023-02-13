@@ -1,11 +1,4 @@
-<mat-card class="contact-detail-container">
-  <div>
-    <h1>{{contact.firstName}} {{contact.lastName}}</h1>
-    <div class="contact-info">
-      <h3>Email: <span>{{contact.email}}</span></h3>
-      <h3>Phone: <span>{{contact.phone}}</span></h3>
-      <h3>Company: <span>{{contact.company}}</span></h3>
-    </div>
-    <button (click)="deleteContact(contact.id || 0)" mat-raised-button color="warn" class="full-width">Delete Contact</button>
-  </div>
-</mat-card>
+<div class="contact-detail-container">
+  <app-contact-info *ngIf="!edit" [contact]="contact" (enableEdit)="editContact()"></app-contact-info>
+  <app-add-contact-form *ngIf="edit" [editValues]="contact" [editable]="true"></app-add-contact-form>
+</div>

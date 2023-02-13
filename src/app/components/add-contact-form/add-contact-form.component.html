@@ -1,7 +1,7 @@
 <div class="form-container">
   <mat-card class="form-comtaier-card">
     <mat-card-content>
-      <mat-card-title>Add Contact</mat-card-title>
+      <mat-card-title>{{editable ? 'Edit Contact': 'Add Contact'}}</mat-card-title>
       <form [formGroup]="addContactForm" (ngSubmit)="onSubmit()">
         <div class="form-row">
             <mat-form-field class="full-width" appearance="fill">
@@ -33,7 +33,7 @@
         </mat-form-field>
       </div>
       <div style="text-align:right;">
-        <button mat-stroked-button color="primary" type="submit">Add to contacts</button>
+        <button mat-stroked-button color="primary" type="submit">{{editable ? 'Update Contact': 'Add to Contacts'}}</button>
       </div>
       </form>
     </mat-card-content>

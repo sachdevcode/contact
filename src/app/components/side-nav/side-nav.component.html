@@ -1,4 +1,4 @@
-<mat-card class="side-nav">
+<mat-card class="side-nav" *ngIf="isLoggedin">
   <mat-card-content>
       <div *ngFor="let route of routes">
         <button
@@ -8,6 +8,15 @@
         routerLink={{route.path}}
         class="nav-btn"
         >{{route.title}}</button>
+      </div>
+      <div>
+        <button
+        mat-button
+        color="warn"
+        mat-flat-button
+        class="nav-btn logout-btn"
+        (click)="onLogout()"
+        >Log out</button>
       </div>
   </mat-card-content>
 </mat-card>

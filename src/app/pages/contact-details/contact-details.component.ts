@@ -20,6 +20,8 @@ export class ContactDetailsComponent implements OnInit {
     phone: "",
     email:""
   }
+  edit = false;
+
   getContactDetails(id:string | number) {
     this.service.getContactDetails(id).subscribe(data => {
       this.contact = data
@@ -31,11 +33,14 @@ export class ContactDetailsComponent implements OnInit {
     })
     this.router.navigate([''])
   }
+  editContact() {
+    this.edit = true
+  }
+
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id')
     if (id) {
       this.getContactDetails(id)
     }
   }
-
 }
